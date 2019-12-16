@@ -1,0 +1,269 @@
+---
+temporal_resolution: 30s
+set_id: WURex14
+attrs:
+    level: pars_l1
+    version: 0.1
+    author_name: T.C. van Leth
+source_type: disdrometer
+stations:
+    forum_1:
+        prefix: CR1000-0730-FORUM_data_Parsivel_
+        format: CR1000
+        attrs:
+            site_id: forum_1
+            site_latitude: 51.985230
+            site_longitude: 5.664312
+            site_altitude: .NAN
+            temporal_resolution: 30s
+            system_type: disdrometer
+            system_manufacturer: OTT
+            system_model: Parsivel_1
+        channels:
+            channel_1:
+                attrs:
+                    temporal_resolution: 30s
+                    beam_length: 0.180
+                    beam_width: 0.030
+                    beam_heigth: 0.01 # not sure
+                variables:
+                    visibility:
+                        header: '08:'
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: visibility
+                            unit: meter
+                            sampling: mean
+                    precip_old:
+                        header: '01:'
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            name: parsivel_rain_intensity
+                            quantity: rain_intensity
+                            unit: mm/hr
+                            sampling: mean
+                    laser_signal_amplitude:
+                        header: '10:'
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: voltage
+                            unit: mV
+                            sampling: mean
+                    h_count:
+                        header: '93:'
+                        dtype: float
+                        dimensions: [time, velocity, diameter]
+                        attrs:
+                            name: hydrometeor_count
+                            quantity: particle_count
+                            unit: number_of_particles
+                            sampling: mean
+                    h_comp:
+                        header: '04:'
+                        dtype: str
+                        dimensions: [time]
+                        attrs:
+                            name: hydrometeor_composition
+                            quantity: hydrometeor_composition
+                            unit: SYNOP_WW_code
+                            sampling: mean
+            auxiliary:
+                attrs:
+                    temporal_resolution: 30s
+                variables:
+                    sensor_temperature:
+                        header: '12:'
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            name: sensor_temperature
+                            quantity: temperature
+                            unit: deg_celsius
+                            sampling: mean
+                    heating_current:
+                        header: '16:'
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: current
+                            unit: A
+                            sampling: mean
+                    sensor_supply:
+                        header: '17:'
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            name: sensor_supply_voltage
+                            quantity: supply_voltage
+                            unit: V
+                            sampling: mean
+                    sensor_status:
+                        header: '18:'
+                        dtype: int
+                        dimensions: [time]
+                        attrs:
+                            quantity: status_code
+                            unit: none
+                            sampling: instant
+    forum_2:
+        prefix: EPFL_Parsivel_data_Forum2_
+        format: Swiss
+        attrs:
+            system_type: disdrometer
+            system_manufacturer: OTT
+            system_model: Parsivel_1
+            site_id: forum_2
+            site_latitude: 51.985288
+            site_longitude: 5.664268
+            site_altitude: .NAN
+            temporal_resolution: 30s
+        channels: &swiss
+            channel_1:
+                attrs:
+                    temporal_resolution: 30s
+                    beam_length: 0.180
+                    beam_width: 0.030
+                    beam_heigth: 0.01 # not sure
+                variables:
+                    visibility:
+                        header: 11
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: visibility
+                            unit: meter
+                            sampling: mean
+                    precip_old:
+                        header: 6
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            name: parsivel_rain_intensity
+                            quantity: rain_intensity
+                            unit: mm/hr
+                            sampling: mean
+                    laser_signal_amplitude:
+                        header: 12
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: voltage
+                            unit: mV
+                            sampling: mean
+                    h_count:
+                        header: 22
+                        dtype: float
+                        dimensions: [time, velocity, diameter]
+                        attrs:
+                            name: hydrometeor_count
+                            quantity: particle_count
+                            unit: number_of_particles
+                            sampling: mean
+                    h_comp:
+                        header: 9
+                        dtype: str
+                        dimensions: [time]
+                        attrs:
+                            name: hydrometeor_composition
+                            quantity: hydrometeor_composition
+                            unit: SYNOP_WW_code
+                            sampling: mean
+            auxiliary:
+                attrs:
+                    temporal_resolution: 30s
+                variables:
+                    sensor_temperature:
+                        header: 14
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            name: sensor_temperature
+                            quantity: temperature
+                            unit: deg_celsius
+                            sampling: mean
+                    heating_current:
+                        header: 15
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: current
+                            unit: A
+                            sampling: mean
+                    sensor_supply:
+                        header: 16
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            name: sensor_supply_voltage
+                            quantity: supply_voltage
+                            unit: V
+                            sampling: mean
+                    sensor_status:
+                        header: 17
+                        dtype: int
+                        dimensions: [time]
+                        attrs:
+                            quantity: status_code
+                            unit: none
+                            sampling: instant
+                    logger_supply:
+                        header: 4
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            name: logger_supply_voltage
+                            quantity: supply_voltage
+                            unit: V
+                            sampling: mean
+                    logger_temperature:
+                        header: 5
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            name: logger_temperature
+                            quantity: temperature
+                            unit: deg_celsius
+                            sampling: mean
+    bongerd:
+        prefix: EPFL_Parsivel_data_Bongerd_
+        format: Swiss
+        attrs:
+            system_type: disdrometer
+            system_manufacturer: OTT
+            system_model: Parsivel_1
+            site_id: bongerd
+            site_latitude: 51.981858
+            site_longitude: 5.668747
+            site_altitude: .NAN
+            temporal_resolution: 30s
+        channels: *swiss
+    nvwa:
+        prefix: EPFL_Parsivel_data_NVWA_
+        format: Swiss
+        attrs:
+            system_type: disdrometer
+            system_manufacturer: OTT
+            system_model: Parsivel_1
+            site_id: nvwa
+            site_latitude: 51.975098
+            site_longitude: 5.675113
+            site_altitude: .NAN
+            temporal_resolution: 30s
+        channels: *swiss
+    biotechnion:
+        prefix: EPFL_Parsivel_data_Biotechnion_
+        format: Swiss
+        attrs:
+            system_type: disdrometer
+            system_manufacturer: OTT
+            system_model: Parsivel_1
+            site_id: biotechnion
+            site_latitude: 51.968657
+            site_longitude: 5.68273
+            site_altitude: .NAN
+            temporal_resolution: 30s
+        channels: *swiss
+...

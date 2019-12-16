@@ -1,0 +1,98 @@
+---
+attrs: 
+  set_id: none
+  level: none
+  pro_id: none
+  source_type: none
+  cdh5_version: none
+stations:
+  station_1:
+    prefix: none
+    attrs:
+      temporal_resolution: none
+      system_type: none
+      system_manufacturer: none
+      system_model: none
+      site_a_id: none
+      site_a_latitude: none
+      site_a_longitude: none
+      site_a_altitude: none
+      site_b_latitude: none
+      site_b_longitude: none
+      site_b_altitude: none 
+    channels:
+      channel_1:
+        attrs:
+          receiver_side: none
+          ATPC: none
+          temporal_resolution: none
+          frequency: none
+          polarisation: none
+          modulation: none
+        variables:
+          variable_1:
+            prefix: none
+            header: none
+            dtype: none
+            dimensions: [none]
+            attrs:
+              quantity: none
+              unit: none
+              sampling: none
+              side: none
+              device: none
+      auxiliary:
+        attrs:
+        variables:
+          variable_1:
+            attrs:
+  auxiliary:
+    attrs:
+    channels:
+      channel_1:
+        attrs:
+        variables:
+          variable_1:
+            attrs:
+      auxiliary:
+        attrs:
+        variables:
+          variable_1:
+            attrs:   
+---
+attrs: 
+  set_id: none
+  level: none
+  pro_id: none
+  source_type: none
+  cdh5_version: none
+stations:
+  station_1:
+    prefix: none
+    attrs:
+      temporal_resolution: none
+      system_type: none
+      system_manufacturer: none
+      system_model: none
+      site_id: none
+      site_latitude: none
+      site_longitude: none
+      site_altitude: none
+      bucket_volume: none
+      beam_length: none
+      beam_width: none
+      beam_heigth: none 
+    variables:
+      variable_1:
+        header: none
+        dtype: none
+        dimensions: [none]
+        attrs:
+          quantity: none
+          unit: none
+          sampling: none
+          device: none
+          ventilated: none
+          wet: none
+          sampling_height: none
+...

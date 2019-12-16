@@ -1,0 +1,619 @@
+---
+set_id: WURex14
+description: |
+    Data collected with collocated microwave (and optical) links and laser disdrometers from August 2014 untill January 2016 in the town of Wageningen. Transmitters were all placed on the roof of a former university building on the south side of town; Receivers were all placed on the roof of a university building on the north end of town. Total link length was 2.2 km. five disdrometers where placed along the path of the link. Purpose of the measurement campaign was to assess the use of microwave links to measure precipitation. To that end the disdrometers provide a point of comparison.
+
+    This dataset is formatted as an HDF5 file and was encoded using the h5py python library. Gaps in the data were filled up to get regular time series. Fill values used are nan for floating point variables, -9999 for integer variables and "NA" for string variables. raw detector voltages are given with respect to ground. lat/lon coordinates are given in degrees north/east. altitude is in meter above sea level.
+attrs:
+    version: 0.1
+    author_name: T.C. van Leth
+instruments:
+    ral_38:
+        attrs:
+            system_type: microwave_link
+            system_manufacturer: Rutherford_Appleton_Laboratories
+            system_model: RAL_custom_38
+            site_b_id: Biotechnion
+            site_a_id: Forum
+            site_b_latitude: 51.985230
+            site_b_longitude: 5.664312
+            site_b_altitude: 62
+            site_a_latitude: 51.968657
+            site_a_longitude: 5.68273
+            site_a_altitude: 51
+        channels:
+            channel_1:
+                attrs:
+                    receiver_side: site_a
+                    ATPC: False
+                    temporal_resolution: 50ms
+                    frequency: 3.8E+10
+                    polarization: V
+                    modulation: None
+                variables:
+                    rx:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: voltage
+                            unit: mV
+                            side: receiver
+                            sampling: instantaneous
+            channel_2:
+                attrs:
+                    receiver_side: site_a
+                    ATPC: False
+                    temporal_resolution: 50ms
+                    frequency: 3.8E+10
+                    polarization: H
+                    modulation: None
+                variables:
+                    rx:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: voltage
+                            unit: mV
+                            side: receiver
+                            sampling: instantaneous
+            channel_3:
+                attrs:
+                    receiver_side: site_a
+                    ATPC: False
+                    temporal_resolution: 50ms
+                    frequency: 3.8E+10
+                    polarization: Q
+                    modulation: None
+                variables:
+                    rx:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: voltage
+                            unit: mV
+                            side: receiver
+                            sampling: instantaneous
+            channel_4:
+                attrs:
+                    receiver_side: site_a
+                    ATPC: False
+                    temporal_resolution: 50ms
+                    frequency: 3.8E+10
+                    polarization: I
+                    modulation: None
+                variables:
+                    rx:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: voltage
+                            unit: mV
+                            side: receiver
+                            sampling: instantaneous
+            auxiliary:
+                attrs:
+                    temporal_resolution: 30s
+                variables:
+                    temp_rx:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: temperature
+                            unit: deg_celsius
+                            side: receiver
+                            sampling: mean
+                    temp_tx:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: temperature
+                            unit: deg_celsius
+                            side: transmitter
+                            sampling: mean
+                    gps1_rx:
+                        dtype: int
+                        dimensions: [time]
+                        attrs:
+                            quantity: GPS1_status_ok
+                            unit: yes/no
+                            side: receiver
+                            sampling_method: mean
+                    gps2_rx:
+                        dtype: int
+                        dimensions: [time]
+                        attrs:
+                            quantity: GPS2_status_ok
+                            unit: yes/no
+                            side: receiver
+                            sampling_method: mean
+                    gps_tx:
+                        dtype: int
+                        dimensions: [time]
+                        attrs:
+                            quantity: GPS_status_ok
+                            unit: yes/no
+                            side: transmitter
+                            sampling_method: mean
+                    phase_lock_tx:
+                        dtype: int
+                        dimensions: [time]
+                        attrs:
+                            quantity: phase_lock_status_ok
+                            unit: yes/no
+                            side: transmitter
+                            sampling: mean
+                    phase_lock_rx:
+                        dtype: int
+                        dimensions: [time]
+                        attrs:
+                            quantity: phase_lock_status_ok
+                            unit: yes/no
+                            side: receiver
+                            sampling: mean
+                    supply_tx:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: supply_voltage
+                            unit: volt
+                            side: receiver
+                            sampling: mean
+    ral_26:
+        attrs:
+            system_type: microwave_link
+            system_manufacturer: Rutherford_Ableton_Laboratories
+            system_model: RAL_custom_26
+            site_b_id: Biotechnion
+            site_a_id: Forum
+            site_b_latitude: 51.985230
+            site_b_longitude: 5.664312
+            site_b_altitude: 62
+            site_a_latitude: 51.968657
+            site_a_longitude: 5.68273
+            site_a_altitude: 51
+        channels:
+            channel_1:
+                attrs:
+                    receiver_side: site_a
+                    atpc: off
+                    temporal_resolution: 50ms
+                    frequency: 2.6E+10
+                    polarization: H
+                    modulation: None
+                variables:
+                    rx:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: voltage
+                            unit: mV
+                            side: receiver
+                            sampling: instantaneous
+            temp:
+                attrs:
+                    temporal_resolution: 50ms
+                variables:
+                    ground:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: ground_voltage
+                            unit: mV
+                            side: receiver
+            auxiliary:
+                attrs:
+                    temporal_resolution: 30s
+                variables:
+                    temp_rx:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: temperature
+                            unit: deg_celsius
+                            sampling: mean
+                            side: receiver
+                    temp_tx:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: temperature
+                            unit: deg_celsius
+                            sampling: mean
+                            side: transmitter
+                            logger: false
+                    gps_tx:
+                        dtype: int
+                        dimensions: [time]
+                        attrs:
+                            quantity: GPS_status_ok
+                            unit: binary_flag
+                            side: transmitter
+                            sampling: mean
+                    gps_rx:
+                        dtype: int
+                        dimensions: [time]
+                        attrs:
+                            quantity: GPS_status_ok
+                            unit: yes/no
+                            side: receiver
+                            sampling: mean
+                    phase_lock_tx:
+                        dtype: int
+                        dimensions: [time]
+                        attrs:
+                            quantity: phase_lock_status_ok
+                            unit: yes/no
+                            side: transmitter
+                            sampling: mean
+                    phase_lock_rx:
+                        dtype: int
+                        dimensions: [time]
+                        attrs:
+                            quantity: phase_lock_status_ok
+                            unit: yes/no
+                            side: receiver
+                            sampling: mean
+                    supply_tx:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: supply_voltage
+                            unit: volt
+                            side: transmitter
+                            sampling: mean
+                            logger: false
+    nokia:
+        attrs:
+            system_type: microwave_link
+            system_manufacturer: Nokia
+            system_model: Flexihopper
+            site_b_id: Biotechnion
+            site_a_id: Forum
+            site_b_latitude: 51.985230
+            site_b_longitude: 5.664312
+            site_b_altitude: 62
+            site_a_latitude: 51.968657
+            site_a_longitude: 5.68273
+            site_a_altitude: 51
+        channels:
+            channel_1:
+                attrs:
+                    receiver_side: site_a
+                    atpc: off
+                    temporal_resolution: 50ms
+                    frequency: 3.817625E+10
+                    polarization: H
+                    modulation: None
+                variables:
+                    rx:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: voltage
+                            unit: mV
+                            side: receiver
+                            sampling: instantaneous
+    scintec:
+        attrs:
+            system_type: scintilometer
+            system_manufacturer: Scintec
+            system_model: BLS900
+            site_b_id: Biotechnion
+            site_a_id: Forum
+            site_b_latitude: 51.985230
+            site_b_longitude: 5.664312
+            site_b_altitude: 62
+            site_a_latitude: 51.968657
+            site_a_longitude: 5.68273
+            site_a_altitude: 51
+        channels:
+            channel_1:
+                attrs:
+                    receiver_side: site_a
+                    atpc: off
+                    temporal_resolution: 50ms
+                    frequency: 3.4E+14
+                    modulation: 1750
+                    polarization: None
+                variables:
+                    rx:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: voltage
+                            unit: mV
+                            side: receiver
+                            sampling: instantaneous
+            channel_2:
+                attrs:
+                    receiver_side: site_a
+                    atpc: off
+                    temporal_resolution: 50ms
+                    frequency: 3.4E+14
+                    modulation: 2500
+                    polarization: None
+                variables:
+                    rx:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: voltage
+                            unit: mV
+                            side: receiver
+                            sampling: instantaneous
+    cr1000:
+        attrs:
+            system_type: datalogger
+            system_manufacturer: Campbell
+            system_model: CR1000
+            site_id: Forum
+            site_latitude: 51.968657
+            site_longitude: 5.68273
+            site_altitude: 51
+        channels:
+            channel_1:
+                attrs:
+                    temporal_resolution: 30s
+                variables:
+                    logger_supply_rx:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: supply_voltage
+                            unit: volt
+                            side: receiver
+                            sampling: mean
+                    logger_temp_rx:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: temperature
+                            unit: deg_celsius
+                            side: receiver
+                            sampling: mean
+                    logger_supply_tx:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: supply_voltage
+                            unit: volt
+                            side: transmitter
+                            sampling: mean
+                    logger_temp_tx:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: temperature
+                            unit: deg_celsius
+                            side: transmitter
+                            sampling: mean
+    forum_1:
+        attrs:
+            site_id: forum_1
+            site_latitude: 51.985230
+            site_longitude: 5.664312
+            site_altitude: 51
+            temporal_resolution: 30s
+            system_type: disdrometer
+            system_manufacturer: OTT
+            system_model: Parsivel_1
+        channels:
+            channel_1:
+                attrs:
+                    temporal_resolution: 30s
+                    beam_length: 0.180
+                    beam_width: 0.030
+                    beam_heigth: 0.01
+                variables:
+                    visibility:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: visibility
+                            unit: meter
+                            sampling: mean
+                    precip_old:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            name: parsivel_rain_intensity
+                            quantity: rain_intensity
+                            unit: mm/hr
+                            sampling: mean
+                    laser_signal_amplitude:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: voltage
+                            unit: mV
+                            sampling: mean
+                    h_count:
+                        dtype: float
+                        dimensions: [time, velocity, diameter]
+                        attrs:
+                            name: hydrometeor_count
+                            quantity: particle_count
+                            unit: number_of_particles
+                            sampling: mean
+                    h_comp:
+                        dtype: str
+                        dimensions: [time]
+                        attrs:
+                            name: hydrometeor_composition
+                            quantity: hydrometeor_composition
+                            unit: SYNOP_WW_code
+                            sampling: mean
+            auxiliary:
+                attrs:
+                    temporal_resolution: 30s
+                variables:
+                    sensor_temperature:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            name: sensor_temperature
+                            quantity: temperature
+                            unit: deg_celsius
+                            sampling: mean
+                    heating_current:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: current
+                            unit: A
+                            sampling: mean
+                    sensor_supply:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            name: sensor_supply_voltage
+                            quantity: supply_voltage
+                            unit: V
+                            sampling: mean
+                    sensor_status:
+                        dtype: int
+                        dimensions: [time]
+                        attrs:
+                            quantity: status_code
+                            unit: none
+                            sampling: instant
+    forum_2:
+        attrs:
+            system_type: disdrometer
+            system_manufacturer: OTT
+            system_model: Parsivel_1
+            site_id: forum_2
+            site_latitude: 51.985288
+            site_longitude: 5.664268
+            site_altitude: 51
+            temporal_resolution: 30s
+        channels: &swiss
+            channel_1:
+                attrs:
+                    temporal_resolution: 30s
+                    beam_length: 0.180
+                    beam_width: 0.030
+                    beam_heigth: 0.01 # not sure
+                variables:
+                    visibility:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: visibility
+                            unit: meter
+                            sampling: mean
+                    precip_old:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            name: parsivel_rain_intensity
+                            quantity: rain_intensity
+                            unit: mm/hr
+                            sampling: mean
+                    laser_signal_amplitude:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: voltage
+                            unit: mV
+                            sampling: mean
+                    h_count:
+                        dtype: float
+                        dimensions: [time, velocity, diameter]
+                        attrs:
+                            name: hydrometeor_count
+                            quantity: particle_count
+                            unit: number_of_particles
+                            sampling: mean
+                    h_comp:
+                        dtype: str
+                        dimensions: [time]
+                        attrs:
+                            name: hydrometeor_composition
+                            quantity: hydrometeor_composition
+                            unit: SYNOP_WW_code
+                            sampling: mean
+            auxiliary:
+                attrs:
+                    temporal_resolution: 30s
+                variables:
+                    sensor_temperature:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            name: sensor_temperature
+                            quantity: temperature
+                            unit: deg_celsius
+                            sampling: mean
+                    heating_current:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: current
+                            unit: A
+                            sampling: mean
+                    sensor_supply:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            name: sensor_supply_voltage
+                            quantity: supply_voltage
+                            unit: V
+                            sampling: mean
+                    sensor_status:
+                        dtype: int
+                        dimensions: [time]
+                        attrs:
+                            quantity: status_code
+                            unit: none
+                            sampling: instant
+                    logger_supply:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            name: logger_supply_voltage
+                            quantity: supply_voltage
+                            unit: V
+                            sampling: mean
+                    logger_temperature:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            name: logger_temperature
+                            quantity: temperature
+                            unit: deg_celsius
+                            sampling: mean
+    bongerd:
+        attrs:
+            system_type: disdrometer
+            system_manufacturer: OTT
+            system_model: Parsivel_1
+            site_id: bongerd
+            site_latitude: 51.981858
+            site_longitude: 5.668747
+            site_altitude: .NAN
+            temporal_resolution: 30s
+        channels: *swiss
+    nvwa:
+        attrs:
+            system_type: disdrometer
+            system_manufacturer: OTT
+            system_model: Parsivel_1
+            site_id: nvwa
+            site_latitude: 51.975098
+            site_longitude: 5.675113
+            site_altitude: .NAN
+            temporal_resolution: 30s
+        channels: *swiss
+    biotechnion:
+        attrs:
+            system_type: disdrometer
+            system_manufacturer: OTT
+            system_model: Parsivel_1
+            site_id: biotechnion
+            site_latitude: 51.968657
+            site_longitude: 5.68273
+            site_altitude: .NAN
+            temporal_resolution: 30s
+        channels: *swiss
+...

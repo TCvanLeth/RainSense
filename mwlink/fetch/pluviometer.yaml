@@ -1,0 +1,42 @@
+---
+temporal_resolution: 30s
+set_id: WURex14
+attrs:
+    level: gauge_l2
+    source_type: gauge
+    file_format: CMLh5
+    file_format_version: 0.1
+stations:
+    forum:
+        prefix: forum_pluvio
+        attrs:
+            system_type: gauge
+            system_manufacturer: precis_mecanique
+            system_model: 'modele_3029/1'
+            site_id: forum
+            site_latitude: 51.985230
+            site_longitude: 5.664312
+            site_altitude: .NAN
+            temporal_resolution: 30s
+        channels:
+            channel_1:
+                attrs:
+                    temporal_resolution: 30s
+                    bucket_volume: 1E-4
+                variables:
+                    precip:
+                        header: R
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: rain_intensity
+                            unit: mm/hr
+                            sampling: irregular
+                    cumrain:
+                        dtype: float
+                        dimensions: [time]
+                        attrs:
+                            quantity: rain_volume
+                        unit: mm
+                        sampling: irregular
+...
