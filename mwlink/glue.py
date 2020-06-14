@@ -6,7 +6,7 @@ Created on Wed Jan 11 14:11:56 2017
 @author: tcvanleth
 """
 
-import phad as ph
+import pyhad as ph
 
 dat = []
 path = '/home/tcvanleth/Data2/Raupach_dsd_simulation/dsd2/Raupach_dsd_simulation_dsd2_test3'

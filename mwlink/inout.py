@@ -6,9 +6,9 @@ Created on Mon Sep 28 11:51:50 2015
 """
 import os, logging
 
-import phad as ph
-from phad import common
-from phad import inout_common as io
+import pyhad as ph
+from pyhad import common
+from pyhad import inout_common as io
 
 from mwlink import settings
 

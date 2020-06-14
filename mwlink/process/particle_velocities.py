@@ -5,8 +5,8 @@ Created on Tue Jan 30 15:03:48 2018
 
 @author: tcvanleth
 """
-import phad as ph
-from phad import ufuncs as uf
+import pyhad as ph
+from pyhad import ufuncs as uf
 
 
 def get_vt_rain(rho_w, rho_a, eta, sigma, D):

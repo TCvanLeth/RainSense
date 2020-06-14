@@ -6,7 +6,7 @@ Created on Mon Mar 13 15:22:45 2017
 @author: tcvanleth
 """
 
-import phad as ph
+import pyhad as ph
 
 from mwlink import inout as io
 from mwlink.process.atmo_level2 import atmo_l2

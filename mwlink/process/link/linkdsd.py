@@ -10,7 +10,7 @@ import os
 
 from numba import jit
 import numpy as np
-from phad import ufuncs as uf
+from pyhad import ufuncs as uf
 from scipy import optimize
 
 from mwlink.process.link import solver

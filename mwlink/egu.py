@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import phad as ph
+import pyhad as ph
 import numpy as np
 import matplotlib.pyplot as pl
 import itertools

@@ -6,8 +6,8 @@ Created on Wed Sep 16 14:31:25 2015
 """
 
 import numpy as np
-import phad as ph
-from phad import ufuncs as uf
+import pyhad as ph
+from pyhad import ufuncs as uf
 import scatterpy as scat
 from tqdm import tqdm
 

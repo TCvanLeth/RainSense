@@ -7,7 +7,7 @@ Created on Fri Mar 17 15:14:46 2017
 """
 
 import numpy as np
-import phad as ph
+import pyhad as ph
 
 from mwlink import inout as io
 

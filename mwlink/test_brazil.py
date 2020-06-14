@@ -6,7 +6,7 @@ Created on Fri Mar 17 14:38:15 2017
 @author: tcvanleth
 """
 import numpy as np
-import phad as ph
+import pyhad as ph
 
 from mwlink import inout as io
 

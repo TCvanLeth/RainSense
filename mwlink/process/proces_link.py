@@ -7,7 +7,7 @@ Created on Mon Sep 14 08:28:43 2015
 
 import logging
 
-import phad as ph
+import pyhad as ph
 
 from mwlink import inout as io
 from mwlink.process.link import link_level2 as l2

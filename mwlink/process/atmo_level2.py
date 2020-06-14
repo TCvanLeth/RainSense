@@ -7,7 +7,7 @@ Created on Tue Sep 22 11:35:04 2015
 TODO: include lapse rate
 """
 import logging
-import phad as ph
+import pyhad as ph
 
 
 def atmo_l2(indat):

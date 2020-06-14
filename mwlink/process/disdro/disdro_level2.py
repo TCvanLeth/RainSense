@@ -11,8 +11,8 @@ TODO: calculate Johnson SB and lognormal distributions
 import logging
 
 import numpy as np
-import phad as ph
-from phad import ufuncs as uf
+import pyhad as ph
+from pyhad import ufuncs as uf
 from scipy.interpolate import interp1d
 
 

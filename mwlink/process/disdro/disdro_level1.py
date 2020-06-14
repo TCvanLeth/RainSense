@@ -11,8 +11,8 @@ TODO: determine aggregation for velocity correction
 import os, logging
 
 import numpy as np
-import phad as ph
-from phad import ufuncs as uf
+import pyhad as ph
+from pyhad import ufuncs as uf
 
 from mwlink.process import particle_velocities as pv
 

@@ -9,7 +9,7 @@ Created on Mon Jun 11 12:16:38 2018
 import logging
 
 import pandas as pd
-import phad as ph
+import pyhad as ph
 
 from mwlink import inout as io
 from mwlink.process.disdro import disdro_level2 as l2

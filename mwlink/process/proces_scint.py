@@ -6,7 +6,7 @@ Created on Wed Jun 21 15:03:27 2017
 @author: tcvanleth
 """
 
-import phad as ph
+import pyhad as ph
 
 from mwlink import inout as io
 from mwlink.process.link import link_level2 as l2

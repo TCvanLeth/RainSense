@@ -8,8 +8,8 @@ T.C. van Leth
 import logging
 
 import numpy as np
-import phad as ph
-from phad import ufuncs as uf
+import pyhad as ph
+from pyhad import ufuncs as uf
 
 
 def link_l1b(indat, calib):

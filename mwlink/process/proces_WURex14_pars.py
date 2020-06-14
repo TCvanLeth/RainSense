@@ -9,7 +9,7 @@ TO-DO: provision for missing veenkampen data
 """
 import logging
 
-import phad as ph
+import pyhad as ph
 
 from mwlink import inout as io
 from mwlink.process.disdro import disdro_level1 as l1

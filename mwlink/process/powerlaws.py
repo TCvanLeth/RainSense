@@ -4,7 +4,7 @@ Created on Mon Jul 20 14:42:11 2015
 
 @author: T.C. van Leth
 """
-import phad as ph
+import pyhad as ph
 from mwlink import inout as io
 import mwlink.process.disdro.disdro_level2 as dl2
 
