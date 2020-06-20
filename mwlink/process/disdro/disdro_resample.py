@@ -25,7 +25,6 @@ def proc_path_int(setID, proID, **kwargs):
     #tdat = odat.apply(get_htypes)
     #edat = get_event(tdat)
     #mdat = ha.merge([tdat, edat])
-    print("saving")
     io.export_ds(odat, level='link_aux')
 
 

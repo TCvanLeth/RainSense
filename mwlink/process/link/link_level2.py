@@ -58,8 +58,6 @@ def link_l2(indat, powlaws):
                           frequency=k.getattrs('frequency'),
                           polarization=k.getattrs('polarization'))
 
-    print(k)
-    print(pars)
     R = get_rain(k, pars)
 
     R.setattrs(quantity='rain_intensity', unit='mm/hr')

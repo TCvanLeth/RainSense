@@ -16,15 +16,6 @@ from scipy import optimize
 from mwlink.process.link import solver
 
 
-"""
-            if (ier == 1 and sol[1] < 50 and sol[1] > 1 and sol[0] != x0 and
-                sol[1] != x1 and sol[0] < 0.55*sol[1]+5 and sol[0] > 0.55*sol[1]-3
-                and sol[0] < 1.9 * sol[1] - 2):
-"""
-#            out = optimize.fsolve(func2, [x0, x1], fprime=jac2, maxfev=maxfev,
-#                                       full_output=True)
-#            sol, info, ier, mesg = out
-
 odir = "/home/tcvanleth/Data2/wurex_parsivel/dsd2"
 grid = np.load(os.path.join(odir, 'mask.npy'))
 

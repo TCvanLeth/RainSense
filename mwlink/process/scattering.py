@@ -195,7 +195,7 @@ def get_m_graupel(T, freq):
 
 
 ###############################################################################
-# harray wrappers
+# PyHAD wrappers
 dropshape = uf.ufunc(scat.shapes.dropshape)
 dropshape2 = uf.ufunc(scat.shapes.dropshape2)
 dropshape3 = uf.ufunc(scat.shapes.dropshape3)
@@ -304,25 +304,14 @@ if __name__ == '__main__':
     T = ph.arange(263, 313, 0.5, 'temperature', attrs=attrs)
 
     T = ph.arange(288, 289, 1, 'temperature', attrs=attrs)
-#    D = ha.arange(1e-3, 2e-3, 1e-3, 'diameter', attrs=attrs)
 
     attrs = {'quantity':'frequency', 'unit':'Hz'}
-#    for f in tqdm(range(5, 10, 5)):
-#        freq = ph.arange(f*1e9, f*1e9 + 5e9, 1e9, 'frequency', attrs=attrs)
-#        outdat = calc_scatter(freq, D, T)
-#
-#        outdat.attrs['level'] = 'scatter'
-#        outdat.name = 'simulated'
-#        outdat.attrs['pro_id'] = 'thurai_full_regfreq'
-#        print('writing to database')
-#        io.export_ds(outdat)
 
     freq = ph.index([73.5E9, 83.5E9], name='frequency', attrs=attrs)
     outdat = calc_scatter(freq, D, T)
     outdat.attrs['level'] = 'scatter'
     outdat.attrs['pro_id'] = 'dropshape_thurai07'
     outdat.name = 'simulated'
-    print('writing to database')
     io.export_ds(outdat)
 
 

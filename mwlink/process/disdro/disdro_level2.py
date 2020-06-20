@@ -63,8 +63,8 @@ def disdro_l2(indat, scat=None):
 #    m_s = get_snowmass(D)
 #    m_i = get_icemass(D)  # placeholder
 #    m_g = get_graupelmass(D)
-#    htype = ha.index(['rain', 'hail', 'graupel', 'snow'], 'htype')
-#    mass = ha.merge([m_w, m_s, m_i, m_m, m_g], xdim=htype)
+#    htype = ph.index(['rain', 'hail', 'graupel', 'snow'], 'htype')
+#    mass = ph.merge([m_w, m_s, m_i, m_m, m_g], xdim=htype)
 
     R_new = get_flux(n_vD, m_w, v, dD, dv)
     lwc = get_LWC(n_D, m_w, dD)
@@ -333,6 +333,7 @@ def resample_dsd(ND, scat):
     D_pars = ND['diameter'] * 1000
     D = scat['diameter'] * 1000
     D1 = D.values
+
     D1 = D1[(D1>=D_pars.values[0]) & (D1<=D_pars.values[-1])]
     D.values = D1
     dD = D1[1]-D1[0]
@@ -340,5 +341,6 @@ def resample_dsd(ND, scat):
     # interpolation of dsd
     func = interp1d(D_pars, ND, kind='linear', bounds_error=False, axis=0)
     NDpath = ph.Array(func(D1), coords=[D, time])
+
     NDpath.setname('original_ND')
     return NDpath, dD

@@ -12,12 +12,18 @@ import mwlink.process.disdro.disdro_level2 as dl2
 def proc_pwlaw(setID, proID):
     # Parsivel DSD
     data = io.import_ds('link_aux', setID, proID)
-    #rain = data.aselect(name='h_comp').sel(htype='rain')
-    #data = data.mask(rain == False).sel(frequency=[26e9, 38e9, 38.1e9], how='nearest')
     data = data.sel(frequency=[26e9, 38e9, 38.1e9], how='nearest')
+    data = data.sel(time=slice('2015-04-01', '2015-04-02'))
+
+    rain = data.aselect(name='h_comp').sel(htype='rain')
+    print(data)
+    print(rain)
+    raise Exception
+    data = data.mask(rain == False)
+
     NDpath = data.aselect(name='N(D)')
     R = data.aselect(quantity='volume_flux')
-    print(NDpath)
+
     # T-matrix scattering cross sections
     scatID = 'thurai_full_regfreq' # <-- drop shape according to Thurai 2007
     scat = io.import_ds('scatter', 'simulated', scatID, conform=True)
@@ -28,7 +34,7 @@ def proc_pwlaw(setID, proID):
     ext = scat.aselect(name='ext').rechunk({'frequency': 1})
 
     # Interpolation of dsd
-    NDpath, dD = dl2.resample_dsd(NDpath, scat)
+    NDpath, dD = dl2.resample_dsd(NDpath['parsivel', 'channel_1'], scat)
 
     # Attenuation and diferential phase shift forward modeling
     k = dl2.get_atten(NDpath, ext, dD)
@@ -42,7 +48,7 @@ def proc_pwlaw(setID, proID):
     k_R = get_powerlaw(k, R, 'specific_attenuation', 'k_R')
     phi_R = get_powerlaw(phi, R, 'differential_phase_angle', 'phi_R')
     pwlaws = ph.merge([k_R, phi_R])
-
+    print(pwlaws)
     pwlaws.attrs['level'] = 'powerlaw'
     pwlaws.name = setID
     pwlaws.attrs['pro_id'] = proID
@@ -55,17 +61,12 @@ def get_powerlaw(x, y, quant, name):
     pwlaws = []
     for IDs, ix in x:
         IDs = dict(IDs)
-#        pars = ha.analysis.powerlaw(ix, y)
-#        pars.setattrs(quantity=quant)
-#        pars.setattrs(**IDs)
-#        pars.setname(name, include=IDs.keys())
-#        pwlaws.append(pars)
 
-        pars2 = ph.analysis.powerlaw(ix.flatten(), y.flatten())
-        pars2.setattrs(quantity=quant)
-        pars2.setattrs(**IDs)
-        pars2.setname(name, include=IDs.keys())
-        pwlaws.append(pars2)
+        pars = ph.analysis.powerlaw(ix, y)
+        pars.setattrs(quantity=quant)
+        pars.setattrs(**IDs)
+        pars.setname(name, include=IDs.keys())
+        pwlaws.append(pars)
     return ph.merge(pwlaws)
 
 
