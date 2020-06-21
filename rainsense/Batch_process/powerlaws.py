@@ -6,7 +6,7 @@ Created on Mon Jul 20 14:42:11 2015
 """
 import pyhad as ph
 from mwlink import inout as io
-import mwlink.process.disdro.disdro_level2 as dl2
+import rainsense.disdro.disdro_level2 as dl2
 
 
 def proc_pwlaw(setID, proID):

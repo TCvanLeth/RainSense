@@ -13,7 +13,7 @@ import numpy as np
 from pyhad import ufuncs as uf
 from scipy import optimize
 
-from mwlink.process.link import solver
+from rainsense.link import solver
 
 
 odir = "/home/tcvanleth/Data2/wurex_parsivel/dsd2"

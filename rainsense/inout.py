@@ -10,7 +10,7 @@ import pyhad as ph
 from pyhad import common
 from pyhad import inout_common as io
 
-from mwlink import settings
+from rainsense import settings
 
 
 def export_ds(data, daily=False, level=None, pro_id=None, merge=False):

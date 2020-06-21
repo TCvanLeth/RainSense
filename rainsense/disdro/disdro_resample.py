@@ -11,7 +11,7 @@ import numpy as np
 import pyhad as ph
 from pyhad import ufuncs as uf
 
-from mwlink import inout as io
+from rainsense import inout as io
 
 
 def proc_path_int(setID, proID, **kwargs):

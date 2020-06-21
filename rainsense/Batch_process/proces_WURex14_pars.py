@@ -11,9 +11,9 @@ import logging
 
 import pyhad as ph
 
-from mwlink import inout as io
-from mwlink.process.disdro import disdro_level1 as l1
-from mwlink.process.disdro import disdro_level2 as l2
+from rainsense import inout as io
+from rainsense.disdro import disdro_level1 as l1
+from rainsense.disdro import disdro_level2 as l2
 
 
 def proces_wurex_pars(proID, begin=None, end=None):

@@ -14,7 +14,7 @@ import numpy as np
 import pyhad as ph
 from pyhad import ufuncs as uf
 
-from mwlink.process import particle_velocities as pv
+from rainsense import particle_velocities as pv
 
 
 def pars_correction(indat, atmo):
